@@ -1,27 +1,34 @@
 import React, {Component} from 'react';
-import GnomeList from './components/GnomeList'
+// ES6 modules - 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import GnomeList from './components/gnome-list';
+import GnomeInfo from './components/gnome-info';
     
 class App extends Component {
+   constructor(props) {
+        super(props);
+        this.state = {
+          dataURL: `https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json`,
+        };
+   }
 
-  state= {
-    elements: []
-  }
 
-  componentDidMount() {
-    fetch(`https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json`)
-    .then(res => res.json())
-    .then((result) => {
-      let elements = result.Brastlewark
-      this.setState({elements: elements})
-    })
-    .catch(console.log)
-  }
- 
   render () {
     return (
-        <GnomeList elements={this.state.elements}/>
-    )
+      <div>
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/users" render={() => <GnomeList dataURL={this.state.dataURL}/>}/>
+              <Route exact path="/users/:id" render={({match}) => <GnomeInfo id={match.params.id}
+                                                                                             dataURL={this.state.dataURL}/>}/>
+            </Switch>
+          </div>
+        </Router>
+      </div>
+
+    );
   }
 }
     
-export default App
+export default App;
