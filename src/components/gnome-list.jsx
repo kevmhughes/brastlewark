@@ -13,7 +13,10 @@ export default class GnomeList extends React.Component {
         this.readData(this.props.dataURL);
     }
 
-
+    componentDidMount() {
+        this.readData(this.props.dataURL)
+    }
+   
 readData =  async (dataURL) => {
     fetch(dataURL)
     .then(res => res.json())

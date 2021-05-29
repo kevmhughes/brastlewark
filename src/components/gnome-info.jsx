@@ -10,7 +10,10 @@ export default class GnomeList extends React.Component {
         this.readData(this.props.dataURL);
     }
 
-
+    componentDidMount() {
+        this.readData(this.props.dataURL)
+    }
+    
     readData = (dataURL) => {
         fetch(dataURL)
         .then(res => res.json())
@@ -25,8 +28,9 @@ export default class GnomeList extends React.Component {
     };
      
     render () {
-    
+        
         let userData = this.state.userData
+        if (!userData) return <div>Loading...</div>
         console.log(userData)
     
         return (
@@ -34,7 +38,7 @@ export default class GnomeList extends React.Component {
                 <h1 style={{textAlign: "center"}}>User Info</h1>
                 <div className="container" style={{display: "flex", flexDirection: "column", alignContent: "center", flexWrap: "wrap", marginTop: "5px"}}>
                     <div className="card" style={{width: "18rem", marginBottom: "5px"}}>
-
+                    <div>{userData.name}</div>
                     </div>
 
                  </div>
