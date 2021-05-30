@@ -20,8 +20,7 @@ class App extends Component {
           <div>
             <Switch>
               <Route exact path="/users" render={() => <GnomeList dataURL={this.state.dataURL}/>}/>
-              <Route exact path="/users/:id" render={({match}) => <GnomeInfo id={match.params.id}
-                                                                                             dataURL={this.state.dataURL}/>}/>
+              <Route exact path="/users/:id" render={({match}) => <GnomeInfo id={match.params.id} dataURL={this.state.dataURL}/>}/>
             </Switch>
           </div>
         </Router>
