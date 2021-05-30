@@ -10,12 +10,11 @@ export default class GnomeList extends React.Component {
             loading: false,
             elements: [],
         };
-        this.readData(this.props.dataURL);
     }
 
-    componentDidMount() {
-        this.readData(this.props.dataURL)
-    }
+componentDidMount() {
+    this.readData(this.props.dataURL)
+}
    
 readData =  async (dataURL) => {
     fetch(dataURL)
@@ -38,15 +37,18 @@ render () {
     console.log(elements)
 
     return (
-        <div style={{backgroundColor: "lightsteelblue",}}>
+        <div>
             <h1 style={{textAlign: "center"}}>Brastlewark</h1>
-            <div className="container" style={{display: "flex", flexDirection: "column", alignContent: "center", flexWrap: "wrap", marginTop: "5px"}}>
+            <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-evenly",}}>
             {elements.map((elements) => (
-                <div className="card" style={{width: "18rem", marginBottom: "5px"}}>
-                    <Card.Img variant="top" src={elements.thumbnail} />
-                    <Button className="btn btn-light card-body">
-                    <Link to={{pathname:`/users/${elements.id}`, state: { elements: elements }}}>{elements.name}</Link>                         
-                    </Button>
+                <div key={elements.id} className="card" style={{width: "18rem", marginBottom: "15px"}}>
+                    <Card>
+                    <Card.Img variant="top" src={elements.thumbnail} style={{height: "200px", objectFit: "fill",}} />
+                    <Card.Body>
+                        <Card.Title>{elements.name}</Card.Title>
+                        <Button variant="primary"><Link to={{pathname:`/users/${elements.id}`, state: { elements: elements }}} style={{color: "white", textDecoration: "none"}}>See info</Link></Button>
+                    </Card.Body>
+                    </Card>                 
                 </div>
             ))}
              </div>

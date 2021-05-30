@@ -1,4 +1,6 @@
 import React from 'react'
+import {Card, ListGroupItem, ListGroup, Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 export default class GnomeList extends React.Component {
     constructor(props) {
@@ -7,13 +9,12 @@ export default class GnomeList extends React.Component {
             loading: true,
             userData: null,
         };
-        this.readData(this.props.dataURL);
     }
 
     componentDidMount() {
         this.readData(this.props.dataURL)
     }
-    
+
     readData = (dataURL) => {
         fetch(dataURL)
         .then(res => res.json())
@@ -34,12 +35,29 @@ export default class GnomeList extends React.Component {
         console.log(userData)
     
         return (
-            <div style={{backgroundColor: "lightsteelblue",}}>
+            <div style={{height: "100vh",}}>
                 <h1 style={{textAlign: "center"}}>User Info</h1>
                 <div className="container" style={{display: "flex", flexDirection: "column", alignContent: "center", flexWrap: "wrap", marginTop: "5px"}}>
-                    <div className="card" style={{width: "18rem", marginBottom: "5px"}}>
-                    <div>{userData.name}</div>
-                    </div>
+                    <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={userData.thumbnail} />
+                    <Card.Body>
+                        <Card.Title>{userData.name}</Card.Title>
+                        <Card.Text>
+                        <p>Age: {userData.age} Hair</p>
+                        <p>Colour: {userData.hair_colour}</p>
+                        <p>Height: {userData.height} cm</p>
+                        <p>Weight: {userData.weight} kg</p>
+                        
+                        </Card.Text>
+                    </Card.Body>
+                    <ListGroup className="list-group-flush">
+                        <ListGroupItem>Friends: {userData.friends}</ListGroupItem>
+                        <ListGroupItem>Professions: {userData.professions}</ListGroupItem>
+                    </ListGroup>
+                    <Card.Body>
+                    <Button variant="primary"><Link to={{pathname:`/users`}} style={{color: "white", textDecoration: "none"}}>Go to list</Link></Button>
+                    </Card.Body>
+                    </Card>
 
                  </div>
             </div>
