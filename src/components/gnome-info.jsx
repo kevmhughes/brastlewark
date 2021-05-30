@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, ListGroupItem, ListGroup} from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft, faSpinner, faVenus, faMars, faUserFriends, faBriefcase} from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faSpinner, faVenus, faMars, faUserFriends, faBriefcase, faAddressCard} from "@fortawesome/free-solid-svg-icons";
 import {Link} from 'react-router-dom'
 
 export default class GnomeList extends React.Component {
@@ -39,17 +39,17 @@ export default class GnomeList extends React.Component {
         return (
             <div style={{height: "100vh",}}>
                 <Link to={{pathname:`/users`}} style={{ textDecoration: "none", marginLeft: "5px"}}><FontAwesomeIcon icon={faChevronLeft}/>{" "}Brastlewark</Link>
-                <h1 style={{textAlign: "center"}}>Gnome Info</h1>
+                <h1 style={{textAlign: "center"}}><FontAwesomeIcon icon={faAddressCard}/> </h1>
                 <div className="container" style={{display: "flex", flexDirection: "column", alignContent: "center", flexWrap: "wrap", marginTop: "5px"}}>
                     <Card style={{ width: '24rem' }}>
                     <Card.Img variant="top" src={userData.thumbnail} />
                     <Card.Body>
-                        <Card.Title>{userData.weight >=  40 
+                        <Card.Title style={{marginLeft: "5px"}}>{userData.weight >=  40 
                                 ? <FontAwesomeIcon icon={faMars} style={{color:"lightblue", marginRight: "5px"}}/> 
                                 : <FontAwesomeIcon icon={faVenus} style={{color:"pink", marginRight: "5px"}}/>}
 
-                                {"  "} {userData.name}</Card.Title>
-                        <Card.Text style={{display: "flex", flexDirection: "column"}}>
+                                {"  "}{userData.name}</Card.Title>
+                        <Card.Text style={{display: "flex", flexDirection: "column", marginLeft: "30px"}}>
                             <strong>Age:{" "}<span style={{fontWeight: "normal"}}>{userData.age}</span></strong>
                             <strong>Height:{" "}<span style={{fontWeight: "normal"}}>{Math.round(userData.height)} cm</span></strong>
                             <strong>Weight:{" "}<span style={{fontWeight: "normal"}}>{Math.round(userData.weight)} kg</span></strong> 
@@ -57,8 +57,8 @@ export default class GnomeList extends React.Component {
                         </Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
-                        <ListGroupItem><FontAwesomeIcon icon={faUserFriends} style={{marginRight: "5px"}}/> {userData.friends.join(", ")}{userData.friends.length > 0 ? "." : "This gnome is not very sociable."}</ListGroupItem>
-                        <ListGroupItem><FontAwesomeIcon icon={faBriefcase} style={{marginRight: "10px"}}/>{userData.professions.join(", ")}{userData.professions.length > 0 ? "." : "This gnome has no useful skills."}</ListGroupItem>
+                        <ListGroupItem style={{display: "flex"}}><div style={{width: "30px"}}><FontAwesomeIcon icon={faUserFriends} style={{marginRight: "15px"}}/></div>{userData.friends.join(", ")}{userData.friends.length > 0 ? "." : "This gnome is not very sociable."}</ListGroupItem>
+                        <ListGroupItem style={{display: "flex"}}><div style={{width: "30px"}}><FontAwesomeIcon icon={faBriefcase} style={{marginRight: "15px"}}/></div>{userData.professions.join(", ")}{userData.professions.length > 0 ? "." : "This gnome has no useful skills."}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
                     

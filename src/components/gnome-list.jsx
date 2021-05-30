@@ -3,6 +3,7 @@ import {Card} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserFriends, faMars, faVenus, faSpinner, faChessRook } from "@fortawesome/free-solid-svg-icons";
+import LazyLoad from 'react-lazyload';
 
 
 
@@ -43,13 +44,13 @@ render () {
 
     return (
         <div>
-            <h1 style={{textAlign: "center"}}><FontAwesomeIcon icon={faChessRook} style={{marginRight: "10px"}}/>Brastlewark</h1>
+            <h1 style={{textAlign: "center", paddingTop: "10px"}}><FontAwesomeIcon icon={faChessRook} style={{marginRight: "10px"}}/>Brastlewark</h1>
             <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-evenly",}}>
             {elements.map((elements) => (
                 <div key={elements.id} style={{width: "98%", marginBottom: "2px"}}>
                     <Link to={{pathname:`/users/${elements.id}`, state: { elements: elements }}} style={{textDecoration: "none"}}>
                     <Card style={{flexDirection: "row"}}>
-                    <Card.Img variant="top" src={elements.thumbnail} style={{height: "50px", width: "50px", borderRadius: "50%", alignSelf: "center", marginLeft: "10px", imageRendering: " -webkit-optimize-contrast"}} alt="Avatar image"/>
+                    <LazyLoad style={{margin: "auto"}} once={true} offset={600}><Card.Img variant="top" src={elements.thumbnail} style={{height: "50px", width: "50px", borderRadius: "50%", alignSelf: "center", marginLeft: "10px", imageRendering: " -webkit-optimize-contrast"}} alt="Avatar image"/></LazyLoad>
                     <Card.Body>
                         <Card.Title style={{marginBottom: "0px"}}>
                             <div style={{color: "black", fontSize:"17px"}}>
