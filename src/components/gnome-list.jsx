@@ -1,13 +1,16 @@
 import React from 'react';
-import {Button, Card} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Card} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserFriends, faMars, faVenus, faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 
 
 export default class GnomeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: false,
+            loading: true,
             elements: [],
         };
     }
@@ -34,6 +37,8 @@ readData =  async (dataURL) => {
 render () {
 
     let elements = this.state.elements
+    let loading = this.state.loading
+    if (loading) return <div><FontAwesomeIcon icon={faSpinner} className="fa-pulse"/></div>
     console.log(elements)
 
     return (
@@ -41,14 +46,34 @@ render () {
             <h1 style={{textAlign: "center"}}>Brastlewark</h1>
             <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-evenly",}}>
             {elements.map((elements) => (
-                <div key={elements.id} className="card" style={{width: "18rem", marginBottom: "15px"}}>
-                    <Card>
-                    <Card.Img variant="top" src={elements.thumbnail} style={{height: "200px", objectFit: "fill",}} />
+                <div key={elements.id} style={{width: "98%", marginBottom: "2px"}}>
+                    <Link to={{pathname:`/users/${elements.id}`, state: { elements: elements }}}>
+                    <Card style={{flexDirection: "row"}}>
+                    <Card.Img variant="top" src={elements.thumbnail} style={{height: "50px", width: "50px", borderRadius: "50%", alignSelf: "center", marginLeft: "10px", imageRendering: " -webkit-optimize-contrast"}} alt="Avatar image"/>
                     <Card.Body>
-                        <Card.Title>{elements.name}</Card.Title>
-                        <Button variant="primary"><Link to={{pathname:`/users/${elements.id}`, state: { elements: elements }}} style={{color: "white", textDecoration: "none"}}>See info</Link></Button>
+                        <Card.Title style={{marginBottom: "0px"}}>
+                            <div style={{color: "black", fontSize:"17px"}}>
+
+                                {elements.weight <=  40 
+                                ? <FontAwesomeIcon icon={faMars} style={{color:"lightblue", marginRight: "5px", fontSize: "15px"}}/> 
+                                : <FontAwesomeIcon icon={faVenus} style={{color:"pink", marginRight: "5px", fontSize: "15px"}}/>}
+
+                                {"  "}{elements.name}
+
+                                <div style={{
+                                    float: "right",
+                                    position: "relative",
+                                    bottom: "15px",
+                                    left: "10px",
+                                    fontSize: "15px",
+                                    }}>
+                                <FontAwesomeIcon icon={faUserFriends}/>{" "}{elements.friends.length}
+                                </div>
+                            </div>
+                        </Card.Title>
                     </Card.Body>
-                    </Card>                 
+                    </Card>   
+                    </Link>              
                 </div>
             ))}
              </div>

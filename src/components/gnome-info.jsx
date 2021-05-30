@@ -36,26 +36,25 @@ export default class GnomeList extends React.Component {
     
         return (
             <div style={{height: "100vh",}}>
-                <h1 style={{textAlign: "center"}}>User Info</h1>
+                <h1 style={{textAlign: "center"}}>Gnome Info</h1>
                 <div className="container" style={{display: "flex", flexDirection: "column", alignContent: "center", flexWrap: "wrap", marginTop: "5px"}}>
-                    <Card style={{ width: '18rem' }}>
+                    <Card style={{ width: '24rem' }}>
                     <Card.Img variant="top" src={userData.thumbnail} />
                     <Card.Body>
-                        <Card.Title>{userData.name}</Card.Title>
+                        <Card.Title><strong>Name:</strong> {userData.name}</Card.Title>
                         <Card.Text>
-                        <p>Age: {userData.age} Hair</p>
-                        <p>Colour: {userData.hair_colour}</p>
-                        <p>Height: {userData.height} cm</p>
-                        <p>Weight: {userData.weight} kg</p>
-                        
+                        <p style={{marginBottom: "0"}}><strong>Age:</strong> {userData.age}</p>
+                        <p style={{marginBottom: "0"}}><strong>Height:</strong> {Math.round(userData.height)} cm</p>
+                        <p style={{marginBottom: "0"}}><strong>Weight:</strong> {Math.round(userData.weight)} kg</p>
+                        <p style={{marginBottom: "0"}}><strong>Hair Colour:</strong> {userData.hair_color}</p>
                         </Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
-                        <ListGroupItem>Friends: {userData.friends}</ListGroupItem>
-                        <ListGroupItem>Professions: {userData.professions}</ListGroupItem>
+                        <ListGroupItem><strong>Friends:</strong> {userData.friends.join(", ")}</ListGroupItem>
+                        <ListGroupItem><strong>Professions:</strong> {userData.professions.join(", ")}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                    <Button variant="primary"><Link to={{pathname:`/users`}} style={{color: "white", textDecoration: "none"}}>Go to list</Link></Button>
+                    <Link to={{pathname:`/users`}} style={{color: "white", textDecoration: "none"}}><Button variant="primary">Go to list</Button></Link>
                     </Card.Body>
                     </Card>
 
@@ -65,3 +64,4 @@ export default class GnomeList extends React.Component {
     }
 
 }
+
