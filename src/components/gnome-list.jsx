@@ -38,7 +38,7 @@ render () {
 
     let elements = this.state.elements
     let loading = this.state.loading
-    if (loading) return <div><FontAwesomeIcon icon={faSpinner} className="fa-pulse"/></div>
+    if (loading) return <div><FontAwesomeIcon icon={faSpinner} className="fa-pulse" style={{position: "absolute", top: "50%", left: "50%", fontSize: "50px", marginLeft: "-25px", marginTop: "-25px"}}/></div>
     console.log(elements)
 
     return (
@@ -54,7 +54,7 @@ render () {
                         <Card.Title style={{marginBottom: "0px"}}>
                             <div style={{color: "black", fontSize:"17px"}}>
 
-                                {elements.weight <=  40 
+                                {elements.weight >=  40 
                                 ? <FontAwesomeIcon icon={faMars} style={{color:"lightblue", marginRight: "5px", fontSize: "15px"}}/> 
                                 : <FontAwesomeIcon icon={faVenus} style={{color:"pink", marginRight: "5px", fontSize: "15px"}}/>}
 
@@ -64,7 +64,7 @@ render () {
                                     float: "right",
                                     position: "relative",
                                     bottom: "15px",
-                                    left: "10px",
+                                    left: "12px",
                                     fontSize: "15px",
                                     }}>
                                 <FontAwesomeIcon icon={faUserFriends}/>{" "}{elements.friends.length}
