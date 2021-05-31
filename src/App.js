@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 // ES6 modules - 'react-router-dom'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import GnomeList from './components/gnome-list';
-import GnomeInfo from './components/gnome-info';
+import GnomeList from './components/gnome-list/gnome-list';
+import GnomeInfo from './components/gnome-info/gnome-info';
     
 class App extends Component {
    constructor(props) {
@@ -21,6 +21,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/users" render={() => <GnomeList dataURL={this.state.dataURL}/>}/>
               <Route exact path="/users/:id" render={({match}) => <GnomeInfo id={match.params.id} dataURL={this.state.dataURL}/>}/>
+              <Route exact path='/' render={() => <GnomeList dataURL={this.state.dataURL}/>}/>
             </Switch>
           </div>
         </Router>

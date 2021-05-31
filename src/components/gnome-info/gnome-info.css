@@ -1,0 +1,39 @@
+.fa-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  font-size: 50px;
+  margin-left: -25px; 
+  margin-top: -25px;
+  }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  padding: 0px;
+}
+
+.gnome-info-card {
+  width: 100vw;
+}
+
+@media (min-width: 720px) {
+  .gnome-info-card {
+    width: 32rem;
+  }
+}
+
+.gnome-info-text {
+  display: flex; 
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.gnome-info-link {
+  text-decoration: none;
+  margin-left: 5px;
+}
+

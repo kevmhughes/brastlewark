@@ -1,0 +1,60 @@
+.fa-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  font-size: 50px;
+  margin-left: -25px; 
+  margin-top: -25px;
+  }
+
+.input-styling {
+    margin-left: 1%;
+    margin-bottom: 2px;
+  }
+
+.main-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+}
+
+.gnome-list-card {
+  width: 98%;
+  margin-bottom: 2px;
+}
+
+.gnome-avatar {
+  height: 50px; 
+  width: 50px; 
+  border-radius: 50%; 
+  align-self: center; 
+  margin-left: 10px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.friends-icon {
+  float: right;
+  position: relative;
+  bottom: 15px;
+  left: 12px;
+  font-size: 15px;
+  color: black;
+}
+
+.gnome-list-title {
+  color: black;
+  font-size: 17px;
+}
+
+
+@media (max-width: 360px) {
+  .gnome-list-title {
+    font-size: 13px;
+  }
+}
+
+.main-title {
+  text-align: center;
+  padding-top: 10px;
+}

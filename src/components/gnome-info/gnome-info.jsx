@@ -3,8 +3,9 @@ import {Card, ListGroupItem, ListGroup} from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faSpinner, faVenus, faMars, faUserFriends, faBriefcase, faAddressCard} from "@fortawesome/free-solid-svg-icons";
 import {Link} from 'react-router-dom'
+import './gnome-info.css';
 
-export default class GnomeList extends React.Component {
+export default class GnomeInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,23 +34,25 @@ export default class GnomeList extends React.Component {
     render () {
         
         let userData = this.state.userData
-        if (!userData) return <div><FontAwesomeIcon icon={faSpinner} className="fa-pulse" style={{position: "absolute", top: "50%", left: "50%", fontSize: "50px", marginLeft: "-25px", marginTop: "-25px"}}/></div>
+        if (!userData) return <div><FontAwesomeIcon icon={faSpinner} className="fa-pulse"/></div>
         console.log(userData)
     
         return (
             <div style={{height: "100vh",}}>
-                <Link to={{pathname:`/users`}} style={{ textDecoration: "none", marginLeft: "5px"}}><FontAwesomeIcon icon={faChevronLeft}/>{" "}Brastlewark</Link>
-                <h1 style={{textAlign: "center"}}><FontAwesomeIcon icon={faAddressCard}/> </h1>
-                <div className="container" style={{display: "flex", flexDirection: "column", alignContent: "center", flexWrap: "wrap", marginTop: "5px"}}>
-                    <Card style={{ width: '24rem' }}>
+                <Link to={{pathname:`/users`}} className="gnome-info-link"><FontAwesomeIcon icon={faChevronLeft}/>{" "}Brastlewark</Link>
+                <h1 style={{textAlign: "center"}}><FontAwesomeIcon icon={faAddressCard}/> ID Card</h1>
+                <div className="container">
+                    <Card className="gnome-info-card">
                     <Card.Img variant="top" src={userData.thumbnail} />
                     <Card.Body>
-                        <Card.Title style={{marginLeft: "5px"}}>{userData.weight >=  40 
-                                ? <FontAwesomeIcon icon={faMars} style={{color:"lightblue", marginRight: "5px"}}/> 
-                                : <FontAwesomeIcon icon={faVenus} style={{color:"pink", marginRight: "5px"}}/>}
-
-                                {"  "}{userData.name}</Card.Title>
-                        <Card.Text style={{display: "flex", flexDirection: "column", marginLeft: "30px"}}>
+                        <Card.Title style={{display: "flex"}}>
+                            <div style={{width: "30px"}}>{userData.weight >=  40 
+                                ? <FontAwesomeIcon icon={faMars} style={{color:"lightblue", marginLeft: "5px"}}/> 
+                                : <FontAwesomeIcon icon={faVenus} style={{color:"pink", marginLeft: "5px"}}/>}
+                            </div>
+                            <span>{userData.name}</span>
+                        </Card.Title>
+                        <Card.Text className="gnome-info-text">
                             <strong>Age:{" "}<span style={{fontWeight: "normal"}}>{userData.age}</span></strong>
                             <strong>Height:{" "}<span style={{fontWeight: "normal"}}>{Math.round(userData.height)} cm</span></strong>
                             <strong>Weight:{" "}<span style={{fontWeight: "normal"}}>{Math.round(userData.weight)} kg</span></strong> 
@@ -58,7 +61,7 @@ export default class GnomeList extends React.Component {
                     </Card.Body>
                     <ListGroup className="list-group-flush">
                         <ListGroupItem style={{display: "flex"}}><div style={{width: "30px"}}><FontAwesomeIcon icon={faUserFriends} style={{marginRight: "15px"}}/></div>{userData.friends.join(", ")}{userData.friends.length > 0 ? "." : "This gnome is not very sociable."}</ListGroupItem>
-                        <ListGroupItem style={{display: "flex"}}><div style={{width: "30px"}}><FontAwesomeIcon icon={faBriefcase} style={{marginRight: "15px"}}/></div>{userData.professions.join(", ")}{userData.professions.length > 0 ? "." : "This gnome has no useful skills."}</ListGroupItem>
+                        <ListGroupItem style={{display: "flex"}}><div style={{width: "30px"}}><FontAwesomeIcon icon={faBriefcase} style={{marginLeft: "2px", marginRight: "13px"}}/></div>{userData.professions.join(", ")}{userData.professions.length > 0 ? "." : "This gnome has no useful skills."}</ListGroupItem>
                     </ListGroup>
                     <Card.Body>
                     
