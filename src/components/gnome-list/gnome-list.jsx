@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends, faMars, faVenus, faSpinner, faChessRook } from '@fortawesome/free-solid-svg-icons';
 import LazyLoad from 'react-lazyload';
 import { forceCheck } from 'react-lazyload';
+import PlaceHolder from '../placeholder/placeholder';
 import './gnome-list.css';
 
 
@@ -66,7 +67,7 @@ render () {
                 <div key={elements.id} className="gnome-list-card">
                     <Link to={{pathname:`/users/${elements.id}`, state: { elements: elements }}} style={{textDecoration: "none"}}>
                         <Card style={{flexDirection: "row"}}>
-                            <LazyLoad style={{margin: "auto"}} once={true} offset={600}>
+                            <LazyLoad style={{margin: "auto"}} once={true} offset={600} placeholder={<PlaceHolder/>}>
                                 <Card.Img variant="top" src={elements.thumbnail} className="gnome-avatar" alt="Avatar image"/>
                             </LazyLoad>
                             <Card.Body>
