@@ -9,7 +9,8 @@
 
 .input-styling {
     margin-left: 1%;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+    width: 98%;
   }
 
 .main-div {
@@ -22,6 +23,7 @@
 .gnome-list-card {
   width: 98%;
   margin-bottom: 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .gnome-avatar {

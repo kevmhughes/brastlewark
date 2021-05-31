@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserFriends, faMars, faVenus, faSpinner, faChessRook } from '@fortawesome/free-solid-svg-icons';
 import LazyLoad from 'react-lazyload';
+import { forceCheck } from 'react-lazyload';
 import './gnome-list.css';
 
 
@@ -19,7 +20,11 @@ export default class GnomeList extends React.Component {
     }
 
 componentDidMount() {
-    this.readData(this.props.dataURL)
+    this.readData(this.props.dataURL);
+}
+
+componentDidUpdate() {
+    forceCheck();
 }
    
 readData =  async (dataURL) => {
@@ -48,6 +53,7 @@ render () {
     let loading = this.state.loading
     if (loading) return <div><FontAwesomeIcon icon={faSpinner} className="fa-pulse"/></div>
     console.log(elements)
+    
 
     return (
         <div>
@@ -55,7 +61,7 @@ render () {
             <div>
                 <input className="input-styling" value={this.state.input} type="text" placeholder="search" onChange={this.onChangeHandler.bind(this)}/>
                 <div className="main-div">
-                {elements.filter(element => this.state.input === '' || element.name.toLowerCase().includes(this.state.input)) 
+                {elements.filter(element => this.state.input === '' || element.name.toLowerCase().includes(this.state.input.toLowerCase())) 
                 .map((elements) => 
                 <div key={elements.id} className="gnome-list-card">
                     <Link to={{pathname:`/users/${elements.id}`, state: { elements: elements }}} style={{textDecoration: "none"}}>
