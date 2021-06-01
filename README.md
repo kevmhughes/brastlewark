@@ -1,7 +1,7 @@
 # Brastlewark
 
 ### Problem:
-Our heroes have just arrived at a Gnome town called Brastlewark, and they need to facilitate trade with the local population. 
+Our heroes have just arrived at a gnome town called Brastlewark, and they need to facilitate trade with the local population. 
 
 ### Solution:
 This app grants an easy way for our heroes to browse all the inhabitants' details from their mobile phones. They can search for a gnome by name and see the chosen gnome's ID card, which features their gender, age, height, weight, hair colour, friends, and professions. 
