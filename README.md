@@ -6,7 +6,6 @@ Our heroes have just arrived at a Gnome town called Brastlewark, and they need t
 ### Solution:
 This app grants an easy way for our heroes to browse all the inhabitants' details from their mobile phones. They can search for a gnome by name and see the chosen gnome's ID card, which features their gender, age, height, weight, friends, and professions. 
 
-# Screenshots ![Screenshot 2021-05-31 at 23 17 21](https://user-images.githubusercontent.com/48656356/120252808-dda5c680-c285-11eb-92ca-77fe042f9596.png)
 ![Screenshot 2021-05-31 at 23 18 02](https://user-images.githubusercontent.com/48656356/120252821-e1394d80-c285-11eb-94ae-bbb7049ea1d7.png)
 
 ![Screenshot 2021-05-31 at 23 43 38](https://user-images.githubusercontent.com/48656356/120252797-d41c5e80-c285-11eb-98f9-85956bf3fbf6.png)
