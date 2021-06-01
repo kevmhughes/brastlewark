@@ -28,7 +28,10 @@ This app grants an easy way for our heroes to browse all the inhabitants' detail
 * React 
 * Jest 
 
-# Library
+# Development Environment
+* Node.js
+
+# Libraries
 * Bootstrap
 
 # API
