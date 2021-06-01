@@ -14,11 +14,11 @@ This app grants an easy way for our heroes to browse all the inhabitants' detail
 
 # Setting Up
 
-1) Clone this repo
+1) Clone this repository
 
- 2) cd brastlewark
+2) cd brastlewark
 
-3) Install dependencies, then start searching for gnomes.
+3) Install dependencies, start the development server, then start searching for gnomes.
 
 `npm install`
 `npm start`
