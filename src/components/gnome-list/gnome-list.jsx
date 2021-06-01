@@ -6,7 +6,6 @@ import {
   faUserFriends, faMars, faVenus, faSpinner, faChessRook,
 } from '@fortawesome/free-solid-svg-icons';
 import LazyLoad, { forceCheck } from 'react-lazyload';
-
 import PlaceHolder from '../placeholder/placeholder';
 import './gnome-list.css';
 
