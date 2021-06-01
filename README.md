@@ -8,9 +8,9 @@ This app grants an easy way for our heroes to browse all the inhabitants' detail
 
 
 # Screenshots
-![Screenshot 2021-05-31 at 23 18 02](https://user-images.githubusercontent.com/48656356/120252821-e1394d80-c285-11eb-94ae-bbb7049ea1d7.png)
+<img src="https://user-images.githubusercontent.com/48656356/120252821-e1394d80-c285-11eb-94ae-bbb7049ea1d7.png" width="200">
 
-![Screenshot 2021-05-31 at 23 43 38](https://user-images.githubusercontent.com/48656356/120252797-d41c5e80-c285-11eb-98f9-85956bf3fbf6.png)
+<img src="https://user-images.githubusercontent.com/48656356/120252797-d41c5e80-c285-11eb-98f9-85956bf3fbf6.png" width="200">
 
 # Setting Up
 
