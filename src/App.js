@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-use-before-define */
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router, Route, Switch, Redirect,

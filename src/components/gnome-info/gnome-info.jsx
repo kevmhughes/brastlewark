@@ -1,3 +1,7 @@
+/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-use-before-define */
 import React from 'react';
 import { Card, ListGroupItem, ListGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
