@@ -36,5 +36,13 @@
 .gnome-info-link {
   text-decoration: none;
   margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
+
+.gnome-info-image {
+  height: 48vh; 
+  object-fit: cover;
+  border-radius: 0;
 }
 
