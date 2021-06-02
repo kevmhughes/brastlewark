@@ -36,3 +36,7 @@ This app allows our heroes to browse all the inhabitants' details from their mob
 # API
 https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json
 
+# Things To Do
+* Unit tests
+* Add sort by professions, friends, and age filter. 
+
