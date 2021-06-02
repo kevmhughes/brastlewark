@@ -36,13 +36,18 @@
 }
 
 
-.friends-icon {
+.briefcase-icon {
   float: right;
   position: relative;
   bottom: 15px;
   left: 12px;
   font-size: 15px;
   color: black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  width: 30px;
 }
 
 .gnome-list-title {

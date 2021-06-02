@@ -8,7 +8,7 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faUserFriends, faMars, faVenus, faSpinner, faChessRook,
+  faMars, faVenus, faSpinner, faChessRook, faBriefcase,
 } from '@fortawesome/free-solid-svg-icons';
 import LazyLoad, { forceCheck } from 'react-lazyload';
 import PlaceHolder from '../placeholder/placeholder';
@@ -85,11 +85,12 @@ render() {
                             {'  '}
                             {elements.name}
                           </span>
-                          <div className="friends-icon">
-                            <FontAwesomeIcon icon={faUserFriends} />
-                            {' '}
-                            {elements.friends.length}
-                          </div>
+                          <span className="briefcase-icon">
+                            <FontAwesomeIcon icon={faBriefcase} />
+                            <span style={{ marginLeft: '5px' }}>
+                              {elements.professions.length}
+                            </span>
+                          </span>
                         </div>
                       </Card.Title>
                     </Card.Body>
