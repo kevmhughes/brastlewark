@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/brastlewark/static/css/main.3528dac5.chunk.css",
-    "main.js": "/brastlewark/static/js/main.6d2b265e.chunk.js",
-    "main.js.map": "/brastlewark/static/js/main.6d2b265e.chunk.js.map",
+    "main.js": "/brastlewark/static/js/main.8fefa6b8.chunk.js",
+    "main.js.map": "/brastlewark/static/js/main.8fefa6b8.chunk.js.map",
     "runtime-main.js": "/brastlewark/static/js/runtime-main.039c83fd.js",
     "runtime-main.js.map": "/brastlewark/static/js/runtime-main.039c83fd.js.map",
     "static/js/2.6da9f713.chunk.js": "/brastlewark/static/js/2.6da9f713.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.039c83fd.js",
     "static/js/2.6da9f713.chunk.js",
     "static/css/main.3528dac5.chunk.css",
-    "static/js/main.6d2b265e.chunk.js"
+    "static/js/main.8fefa6b8.chunk.js"
   ]
 }
